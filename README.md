@@ -1,16 +1,12 @@
 # scala-utilities
-Collection of utility code shared amongst scala libraries
+
+Collection of utility code shared among Scala libraries
 
 ## Publishing
 
-### Publishing Local for test
-Any branch: `sbt publishLocal`
-Build and deploy the jar to your local maven repository
+The `utilities` JAR is published to Nexus after each merge to `main`.
 
-### Publish Snapshot
-Any branch (but usually should be master): `sbt publish`
-This will build the jar as a snapshot and push it to blackfynn maven snapshots
+### Local Publishing
 
-### Release
-Master branch: `sbt release`
-Follow the prompts to update the version and build the jar as an official release and push it to blackfynn maven releases
+Run `sbt publishLocal` from any branch to build and deploy the JAR to your local
+Maven repository
