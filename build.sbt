@@ -2,9 +2,7 @@ organization := "com.blackfynn"
 
 name := "utilities"
 
-scalaVersion := "2.12.4"
-
-version := sys.props.get("version").getOrElse("0.0.0-SNAPSHOT")
+scalaVersion := "2.12.11"
 
 scalacOptions ++= Seq(
   "-language:postfixOps",
@@ -25,12 +23,20 @@ publishTo := {
   }
 }
 
+scalafmtOnCompile := true
+
+version := sys.props.get("version").getOrElse("SNAPSHOT")
+
 publishMavenStyle := true
 publishArtifact in Test := true
 
-scalafmtOnCompile := true
+credentials += Credentials("Sonatype Nexus Repository Manager",
+  "nexus.pennsieve.cc",
+  sys.env("PENNSIEVE_NEXUS_USER"),
+  sys.env("PENNSIEVE_NEXUS_PW")
+)
 
-val catsVersion = "1.2.0"
+val catsVersion = "1.5.0"
 val circeVersion = "0.11.1"
 val scalatestVersion = "3.0.5"
 
@@ -42,10 +48,4 @@ libraryDependencies ++= Seq(
   "org.typelevel" %% "cats-core" % catsVersion,
   "org.scalactic" %% "scalactic" % scalatestVersion,
   "org.scalatest" %% "scalatest" % scalatestVersion % "test"
-)
-
-credentials += Credentials("Sonatype Nexus Repository Manager",
-  "nexus.pennsieve.cc",
-  sys.env.getOrElse("PENNSIEVE_NEXUS_USER", "pennsieve-ci"),
-  sys.env.getOrElse("PENNSIEVE_NEXUS_PW", "")
 )
