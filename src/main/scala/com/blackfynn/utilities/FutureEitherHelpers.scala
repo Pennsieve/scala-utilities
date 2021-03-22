@@ -1,4 +1,4 @@
-package com.blackfynn.utilities
+package com.pennsieve.utilities
 
 import cats.data._
 import cats.implicits._

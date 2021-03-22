@@ -1,4 +1,4 @@
-organization := "com.blackfynn"
+organization := "com.pennsieve"
 
 name := "utilities"
 

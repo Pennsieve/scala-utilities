@@ -1,4 +1,4 @@
-package com.blackfynn.test
+package com.pennsieve.test
 
 import cats.data.EitherT
 
