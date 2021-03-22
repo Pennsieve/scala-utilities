@@ -1,4 +1,4 @@
-package com.blackfynn.utilities
+package com.pennsieve.utilities
 
 import io.circe._
 import shapeless.{ ::, Generic, HNil, Lazy }
