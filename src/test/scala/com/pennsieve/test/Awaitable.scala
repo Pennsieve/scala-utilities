@@ -2,8 +2,8 @@ package com.pennsieve.test
 
 import cats.data.EitherT
 
-import scala.concurrent.{ Await, Future }
 import scala.concurrent.duration.{ Duration, DurationDouble, FiniteDuration }
+import scala.concurrent.{ Await, Future }
 
 case class Awaitable[A](f: Future[A]) {
   def await: A = Await.result(f, Duration.Inf)
